@@ -22,6 +22,7 @@ abstract class Styles {
       fontWeight: FontWeight.bold,
     );
   }
+
   static TextStyle styleBold18(BuildContext context) {
     return TextStyle(
       fontSize: getResonsiveFontSize(context: context, baseFontSize: 18),
@@ -29,6 +30,7 @@ abstract class Styles {
       fontWeight: FontWeight.bold,
     );
   }
+
   static TextStyle styleBold24(BuildContext context) {
     return TextStyle(
       fontSize: getResonsiveFontSize(context: context, baseFontSize: 24),
@@ -36,9 +38,10 @@ abstract class Styles {
       fontWeight: FontWeight.bold,
     );
   }
+
   static TextStyle styleBold36(BuildContext context) {
     return TextStyle(
-      fontSize: getResonsiveFontSize(context: context, baseFontSize: 24),
+      fontSize: getResonsiveFontSize(context: context, baseFontSize: 36),
       color: Theme.of(context).colorScheme.surface,
       fontWeight: FontWeight.bold,
     );
@@ -50,12 +53,14 @@ abstract class Styles {
       color: Theme.of(context).colorScheme.onSurface,
     );
   }
+
   static TextStyle styleReglar14(BuildContext context) {
     return TextStyle(
       fontSize: getResonsiveFontSize(context: context, baseFontSize: 14),
       color: Theme.of(context).colorScheme.tertiary,
     );
   }
+
   static TextStyle styleReglar10(BuildContext context) {
     return TextStyle(
       fontSize: getResonsiveFontSize(context: context, baseFontSize: 10),
@@ -68,7 +73,7 @@ double getResonsiveFontSize({
   required double baseFontSize,
   required BuildContext context,
 }) {
-  double scaleFactor = MediaQuery.sizeOf(context).width / 480;
+  double scaleFactor = MediaQuery.sizeOf(context).width / 390;
   double responsiveFontSize = baseFontSize * scaleFactor;
   double lowerLimit = baseFontSize * .8;
   double upperLimit = baseFontSize * 1.2;
