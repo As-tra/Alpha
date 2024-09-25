@@ -4,6 +4,7 @@ import 'package:alpha/bloc/Auth_bloc/auth_bloc.dart';
 import 'package:alpha/helpers/show_snack_bar.dart';
 import 'package:alpha/utils/assets.dart';
 import 'package:alpha/utils/colors.dart';
+import 'package:alpha/utils/styles.dart';
 import 'package:alpha/widgets/custom_button.dart';
 import 'package:alpha/widgets/custom_form_field.dart';
 import 'package:alpha/widgets/custom_password_field.dart';
@@ -23,6 +24,8 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
   final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -45,7 +48,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
         }
       },
       builder: (context, state) {
-        return Container(
+        return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32),
           child: Form(
             key: formKey,
@@ -59,18 +62,23 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 ),
                 const SizedBox(height: 41),
                 CustomFormTextField(
-                  hintText: 'your name ...',
+                  hintText: 'your name',
                   controller: nameController,
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 25),
                 CustomFormTextField(
                   hintText: 'example@gmail.com',
                   controller: emailController,
                 ),
-                const SizedBox(height: 30),
-                const SizedBox(height: 10),
+                const SizedBox(height: 25),
                 CustomPasswordField(
+                  hint: 'password',
                   controller: passwordController,
+                ),
+                const SizedBox(height: 25),
+                CustomPasswordField(
+                  hint: 'confirm password',
+                  controller: confirmPasswordController,
                 ),
                 const SizedBox(height: 40),
                 CustomButton(
@@ -78,6 +86,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                   btnText: 'Create Account',
                   textColor: AppColors.backgroudColor,
                   ontap: () {
+                    // if you want later to validate password & confirm
                     if (formKey.currentState!.validate()) {
                       BlocProvider.of<AuthBloc>(context).add(
                         RegisterEvent(
@@ -89,9 +98,8 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                     }
                   },
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 27),
                 _buildSignUpLink(context),
-                const SizedBox(height: 30),
               ],
             ),
           ),
@@ -102,25 +110,20 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
 
   Row _buildSignUpLink(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
+        Text(
           "already have an account ? ",
-          style: TextStyle(
-            color: Color(0xff311937),
-            fontWeight: FontWeight.w500,
-          ),
+          style: Styles.styleReglar14(context),
         ),
         GestureDetector(
           onTap: () {
             Navigator.of(context).pop();
           },
-          child: const Text(
-            'Sign In',
-            style: TextStyle(
-              color: Color(0xffB91635),
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
+          child: Text(
+            'Log in here',
+            style: Styles.styleReglar14(context).copyWith(
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),

@@ -23,6 +23,9 @@ class CustomFormTextField extends StatelessWidget {
         },
         controller: controller,
         decoration: InputDecoration(
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
+          suffixIcon: _buildClearIcon(),
           border: _buildBorder(context),
           enabledBorder: _buildBorder(context),
           focusedBorder: _buildBorder(context),
@@ -31,6 +34,17 @@ class CustomFormTextField extends StatelessWidget {
             color: const Color(0xff3C3C43).withOpacity(.5),
           ),
         ),
+      ),
+    );
+  }
+
+  IconButton _buildClearIcon() {
+    return IconButton(
+      onPressed: () {
+        controller.clear();
+      },
+      icon: const Icon(
+        Icons.clear,
       ),
     );
   }
