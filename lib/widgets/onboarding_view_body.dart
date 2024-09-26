@@ -40,7 +40,7 @@ class OnboardingViewBody extends StatelessWidget {
           const SizedBox(height: 20),
           CustomButton(
             bgColor: Theme.of(context).colorScheme.primary,
-            ontap: () {},
+            ontap:  () => GoRouter.of(context).push(AppRouter.kLoginView),
             btnText: 'Log In as Guest',
             textColor: AppColors.backgroudColor,
           ),

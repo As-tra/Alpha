@@ -1,3 +1,4 @@
+import 'package:alpha/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -5,6 +6,13 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const PopScope(
+      canPop: false,
+      child: SafeArea(
+        child: Scaffold(
+          body: HomeViewBody(),
+        ),
+      ),
+    );
   }
 }
