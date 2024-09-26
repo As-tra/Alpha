@@ -2,7 +2,8 @@ import 'package:alpha/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomPasswordField extends StatefulWidget {
-  const CustomPasswordField({super.key, required this.controller, required this.hint});
+  const CustomPasswordField(
+      {super.key, required this.controller, required this.hint});
   final TextEditingController controller;
   final String hint;
 
@@ -25,6 +26,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
         },
         controller: widget.controller,
         obscureText: !showPassword,
+        obscuringCharacter: '*',
         decoration: InputDecoration(
           border: _buildBorder(context),
           enabledBorder: _buildBorder(context),
@@ -33,7 +35,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
               const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
           hintText: widget.hint,
           hintStyle: Styles.styleRegular16(context).copyWith(
-            color: const Color(0xff3C3C43).withOpacity(.5),
+            color: Theme.of(context).colorScheme.onSurface,
           ),
           suffixIcon: GestureDetector(
             onTap: () {

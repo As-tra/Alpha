@@ -26,7 +26,7 @@ class OnboardingViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 7),
           Text(
-            "Read without limits",
+            "Limitless reading awaits you today",
             style: Styles.styleRegular18(context),
             textAlign: TextAlign.center,
           ),

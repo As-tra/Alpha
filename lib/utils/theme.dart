@@ -9,6 +9,7 @@ ThemeData lightTheme = ThemeData(
   fontFamily: kFontFamily,
   colorScheme: const ColorScheme.light(
     primary: AppColors.primaryColor,
+    onPrimary: AppColors.whiteShade,
     secondary: AppColors.secondaryColor,
     surface: AppColors.backgroudColor,
     onSurface: AppColors.grey2,

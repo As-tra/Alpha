@@ -50,60 +50,62 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
         }
       },
       builder: (context, state) {
-        return SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32),
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 32),
+          child: Center(
             child: Form(
               key: formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Image.asset(
-                    Assets.imagesLogoDark,
-                    height: 140,
-                  ),
-                  const SizedBox(height: 41),
-                  CustomFormTextField(
-                    hintText: 'your name',
-                    controller: nameController,
-                  ),
-                  const SizedBox(height: 25),
-                  CustomFormTextField(
-                    hintText: 'example@gmail.com',
-                    controller: emailController,
-                  ),
-                  const SizedBox(height: 25),
-                  CustomPasswordField(
-                    hint: 'password',
-                    controller: passwordController,
-                  ),
-                  const SizedBox(height: 25),
-                  CustomPasswordField(
-                    hint: 'confirm password',
-                    controller: confirmPasswordController,
-                  ),
-                  const SizedBox(height: 40),
-                  CustomButton(
-                    bgColor: Theme.of(context).colorScheme.primary,
-                    btnText: 'Create Account',
-                    textColor: AppColors.backgroudColor,
-                    ontap: () {
-                      // if you want later to validate password & confirm
-                      if (formKey.currentState!.validate()) {
-                        BlocProvider.of<AuthBloc>(context).add(
-                          RegisterEvent(
-                            email: emailController.text,
-                            password: passwordController.text,
-                            name: nameController.text,
-                          ),
-                        );
-                      }
-                    },
-                  ),
-                  const SizedBox(height: 27),
-                  _buildSignUpLink(context),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Image.asset(
+                      Assets.imagesLogoDark,
+                      height: 140,
+                    ),
+                    const SizedBox(height: 41),
+                    CustomFormTextField(
+                      hintText: 'your name',
+                      controller: nameController,
+                    ),
+                    const SizedBox(height: 25),
+                    CustomFormTextField(
+                      hintText: 'example@gmail.com',
+                      controller: emailController,
+                    ),
+                    const SizedBox(height: 25),
+                    CustomPasswordField(
+                      hint: 'password',
+                      controller: passwordController,
+                    ),
+                    const SizedBox(height: 25),
+                    CustomPasswordField(
+                      hint: 'confirm password',
+                      controller: confirmPasswordController,
+                    ),
+                    const SizedBox(height: 40),
+                    CustomButton(
+                      bgColor: Theme.of(context).colorScheme.primary,
+                      btnText: 'Create Account',
+                      textColor: AppColors.backgroudColor,
+                      ontap: () {
+                        // if you want later to validate password & confirm
+                        if (formKey.currentState!.validate()) {
+                          BlocProvider.of<AuthBloc>(context).add(
+                            RegisterEvent(
+                              email: emailController.text,
+                              password: passwordController.text,
+                              name: nameController.text,
+                            ),
+                          );
+                        }
+                      },
+                    ),
+                    const SizedBox(height: 27),
+                    _buildSignUpLink(context),
+                  ],
+                ),
               ),
             ),
           ),

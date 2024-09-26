@@ -27,9 +27,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       child: Image.asset(
         height: 180,
         width: 180,
-        MediaQuery.of(context).platformBrightness == Brightness.dark
-            ? Assets.imagesLogoDark
-            : Assets.imagesLogoLight,
+        Assets.imagesLogoLight,
       ),
     );
   }

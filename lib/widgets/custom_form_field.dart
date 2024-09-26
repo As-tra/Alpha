@@ -31,7 +31,7 @@ class CustomFormTextField extends StatelessWidget {
           focusedBorder: _buildBorder(context),
           hintText: hintText,
           hintStyle: Styles.styleRegular16(context).copyWith(
-            color: const Color(0xff3C3C43).withOpacity(.5),
+            color: Theme.of(context).colorScheme.onSurface,
           ),
         ),
       ),

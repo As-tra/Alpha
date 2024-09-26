@@ -4,7 +4,7 @@ abstract class Styles {
   static TextStyle styleRegular18(BuildContext context) {
     return TextStyle(
       fontSize: getResonsiveFontSize(context: context, baseFontSize: 18),
-      color: Theme.of(context).colorScheme.surface,
+      color: Theme.of(context).colorScheme.onPrimary,
     );
   }
 
@@ -57,7 +57,7 @@ abstract class Styles {
   static TextStyle styleReglar14(BuildContext context) {
     return TextStyle(
       fontSize: getResonsiveFontSize(context: context, baseFontSize: 14),
-      color: Theme.of(context).colorScheme.tertiary,
+      color: Theme.of(context).colorScheme.onSurfaceVariant,
     );
   }
 
