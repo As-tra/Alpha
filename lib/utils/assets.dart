@@ -2,6 +2,30 @@
 class Assets {
   Assets._();
   
+  /// Assets for images1
+  /// assets/images/1.jpg
+  static const String images1 = "assets/images/1.jpg";
+
+  /// Assets for images2
+  /// assets/images/2.jpeg
+  static const String images2 = "assets/images/2.jpeg";
+
+  /// Assets for images3
+  /// assets/images/3.jpeg
+  static const String images3 = "assets/images/3.jpeg";
+
+  /// Assets for images4
+  /// assets/images/4.jpeg
+  static const String images4 = "assets/images/4.jpeg";
+
+  /// Assets for images5
+  /// assets/images/5.jpg
+  static const String images5 = "assets/images/5.jpg";
+
+  /// Assets for images6
+  /// assets/images/6.png
+  static const String images6 = "assets/images/6.png";
+
   /// Assets for imagesBro
   /// assets/images/bro.png
   static const String imagesBro = "assets/images/bro.png";
