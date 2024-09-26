@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:alpha/bloc/Auth_bloc/auth_bloc.dart';
 import 'package:alpha/helpers/show_snack_bar.dart';
+import 'package:alpha/utils/app_router.dart';
 import 'package:alpha/utils/assets.dart';
 import 'package:alpha/utils/colors.dart';
 import 'package:alpha/utils/styles.dart';
@@ -10,6 +11,7 @@ import 'package:alpha/widgets/custom_form_field.dart';
 import 'package:alpha/widgets/custom_password_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class RegisterViewBody extends StatefulWidget {
   const RegisterViewBody({
@@ -32,7 +34,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
     return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state is RegisterSuccess) {
-          // GoRouter.of(context).push(AppRouter.kHomeView);
+          GoRouter.of(context).push(AppRouter.kHomeView);
         } else if (state is RegisterFailure) {
           log(state.error.code);
           switch (state.error.code) {
@@ -48,59 +50,61 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
         }
       },
       builder: (context, state) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32),
-          child: Form(
-            key: formKey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Image.asset(
-                  Assets.imagesLogoDark,
-                  height: 140,
-                ),
-                const SizedBox(height: 41),
-                CustomFormTextField(
-                  hintText: 'your name',
-                  controller: nameController,
-                ),
-                const SizedBox(height: 25),
-                CustomFormTextField(
-                  hintText: 'example@gmail.com',
-                  controller: emailController,
-                ),
-                const SizedBox(height: 25),
-                CustomPasswordField(
-                  hint: 'password',
-                  controller: passwordController,
-                ),
-                const SizedBox(height: 25),
-                CustomPasswordField(
-                  hint: 'confirm password',
-                  controller: confirmPasswordController,
-                ),
-                const SizedBox(height: 40),
-                CustomButton(
-                  bgColor: Theme.of(context).colorScheme.primary,
-                  btnText: 'Create Account',
-                  textColor: AppColors.backgroudColor,
-                  ontap: () {
-                    // if you want later to validate password & confirm
-                    if (formKey.currentState!.validate()) {
-                      BlocProvider.of<AuthBloc>(context).add(
-                        RegisterEvent(
-                          email: emailController.text,
-                          password: passwordController.text,
-                          name: nameController.text,
-                        ),
-                      );
-                    }
-                  },
-                ),
-                const SizedBox(height: 27),
-                _buildSignUpLink(context),
-              ],
+        return SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32),
+            child: Form(
+              key: formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Image.asset(
+                    Assets.imagesLogoDark,
+                    height: 140,
+                  ),
+                  const SizedBox(height: 41),
+                  CustomFormTextField(
+                    hintText: 'your name',
+                    controller: nameController,
+                  ),
+                  const SizedBox(height: 25),
+                  CustomFormTextField(
+                    hintText: 'example@gmail.com',
+                    controller: emailController,
+                  ),
+                  const SizedBox(height: 25),
+                  CustomPasswordField(
+                    hint: 'password',
+                    controller: passwordController,
+                  ),
+                  const SizedBox(height: 25),
+                  CustomPasswordField(
+                    hint: 'confirm password',
+                    controller: confirmPasswordController,
+                  ),
+                  const SizedBox(height: 40),
+                  CustomButton(
+                    bgColor: Theme.of(context).colorScheme.primary,
+                    btnText: 'Create Account',
+                    textColor: AppColors.backgroudColor,
+                    ontap: () {
+                      // if you want later to validate password & confirm
+                      if (formKey.currentState!.validate()) {
+                        BlocProvider.of<AuthBloc>(context).add(
+                          RegisterEvent(
+                            email: emailController.text,
+                            password: passwordController.text,
+                            name: nameController.text,
+                          ),
+                        );
+                      }
+                    },
+                  ),
+                  const SizedBox(height: 27),
+                  _buildSignUpLink(context),
+                ],
+              ),
             ),
           ),
         );
@@ -116,7 +120,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
           "already have an account ? ",
           style: Styles.styleReglar14(context),
         ),
-        GestureDetector(
+        InkWell(
           onTap: () {
             Navigator.of(context).pop();
           },

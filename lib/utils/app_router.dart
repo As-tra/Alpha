@@ -1,3 +1,4 @@
+import 'package:alpha/views/home_view.dart';
 import 'package:alpha/views/onboarding_view.dart';
 import 'package:alpha/views/register_view.dart';
 import 'package:alpha/views/splash_view.dart';
@@ -7,6 +8,7 @@ abstract class AppRouter {
   static const kOnboarding = '/Onboarding';
   static const kLoginView = '/LoginView';
   static const kRegisterView = '/RegisterView';
+  static const kHomeView = '/HomeView';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -20,6 +22,10 @@ abstract class AppRouter {
       GoRoute(
         path: kRegisterView,
         builder: (context, state) => const RegisterView(),
+      ),
+      GoRoute(
+        path: kHomeView,
+        builder: (context, state) => const HomeView(),
       ),
       
     ],
