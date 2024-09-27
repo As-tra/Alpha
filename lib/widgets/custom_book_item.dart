@@ -13,30 +13,37 @@ class CustomBookItem extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Expanded(
+        Hero(
+          tag: bookModel.title,
           child: CustomBookCover(image: bookModel.image),
         ),
         const SizedBox(height: 6),
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            "Catcher in the Rye",
-            style: Styles.styleBold16(context).copyWith(
-              color: Theme.of(context).colorScheme.tertiary,
+        Row(
+          children: [
+            Expanded(
+              child: Text(
+                bookModel.title,
+                style: Styles.styleBold16(context).copyWith(
+                  color: Theme.of(context).colorScheme.tertiary,
+                ),
+              ),
             ),
-          ),
+          ],
         ),
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            "J.D. Salinger",
+            bookModel.author,
             style: Styles.styleReglar12(context),
           ),
         ),
-        Text(
-          "P198.00",
-          style: Styles.styleReglar10(context).copyWith(
-            color: Theme.of(context).colorScheme.onSurface,
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            "P${bookModel.price}.00",
+            style: Styles.styleReglar10(context).copyWith(
+              color: Theme.of(context).colorScheme.onSurface,
+            ),
           ),
         ),
       ],

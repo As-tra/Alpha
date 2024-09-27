@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class CustomBookCover extends StatelessWidget {
@@ -11,12 +10,15 @@ class CustomBookCover extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        image: DecorationImage(
-          image: AssetImage(image),
-          fit: BoxFit.cover,
+    return AspectRatio(
+      aspectRatio: .7,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(
+            image: AssetImage(image),
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );

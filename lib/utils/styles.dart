@@ -26,7 +26,7 @@ abstract class Styles {
   static TextStyle styleBold18(BuildContext context) {
     return TextStyle(
       fontSize: getResonsiveFontSize(context: context, baseFontSize: 18),
-      color: Theme.of(context).colorScheme.secondary,
+      color: Theme.of(context).colorScheme.tertiary,
       fontWeight: FontWeight.bold,
     );
   }

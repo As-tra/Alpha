@@ -18,7 +18,7 @@ List<BookModel> books = [
       overview:
           "Finn has always loved Autumn, but he’s with Sylvie. Torn between love and loyalty, Finn never told Autumn how he truly feels.",
       image: Assets.images1,
-      rating: "4.7",
+      rating: "4.0",
       price: "9",
       aboutAuthor:
           "Laura Nowlin is an American author known for her young adult novels. Her stories often explore deep emotional struggles. She brings out the raw essence of human connections."),
