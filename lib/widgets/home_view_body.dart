@@ -1,6 +1,7 @@
 import 'package:alpha/widgets/custom_nav_bar.dart';
 import 'package:alpha/widgets/custom_search_widget.dart';
 import 'package:alpha/widgets/custom_tab_bar.dart';
+import 'package:alpha/widgets/new_arrivals_books.dart';
 import 'package:alpha/widgets/welcome_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +23,8 @@ class HomeViewBody extends StatelessWidget {
           CustomSearchWidget(),
           SizedBox(height: 24),
           CustomTabBar(),
+          SizedBox(height: 28),
+          NewArrivalsBooks(),
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:alpha/data.dart';
+import 'package:alpha/widgets/custom_book_list_view.dart';
 import 'package:flutter/material.dart';
 
 class CustomTabBar extends StatelessWidget {
@@ -31,11 +32,15 @@ class CustomTabBar extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           SizedBox(
-            height: 160,
+            height: 320,
             child: TabBarView(
               children: List.generate(
                 categories.length,
-                (int index) => const Placeholder(),
+                (index) {
+                  return CustomBookListView(
+                    books: books,
+                  );
+                },
               ),
             ),
           ),

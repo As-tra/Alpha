@@ -24,7 +24,7 @@ List<BookModel> books = [
           "Laura Nowlin is an American author known for her young adult novels. Her stories often explore deep emotional struggles. She brings out the raw essence of human connections."),
   BookModel(
       title: "The Creative Act",
-      category: "Philosophy",
+      category: "Psycology",
       author: "Rick Rubin",
       overview:
           "A deep reflection on creativity and the journey of being an artist, distilling wisdom on how to live as a creator.",
@@ -35,7 +35,7 @@ List<BookModel> books = [
           "Rick Rubin is a renowned music producer and writer. His insights into creativity stem from his work with legendary artists. He believes that creativity is a way of life for everyone."),
   BookModel(
       title: "The Happiness Advantage",
-      category: "Business",
+      category: "Education",
       author: "Shawn Achor",
       overview:
           "A guide on how happiness can lead to success, emphasizing that a positive mindset helps improve both personal and professional life.",
@@ -46,7 +46,7 @@ List<BookModel> books = [
           "Shawn Achor is a leading expert on happiness and human potential. He has delivered one of the most popular TED Talks and focuses on the science of positive psychology."),
   BookModel(
       title: "Becoming",
-      category: "Biography",
+      category: "Novel",
       author: "Michelle Obama",
       overview:
           "A memoir by Michelle Obama reflecting on her journey from her Chicago upbringing to becoming the First Lady of the United States.",
@@ -57,7 +57,7 @@ List<BookModel> books = [
           "Michelle Obama is a lawyer, author, and former First Lady of the United States. Her work focuses on health, education, and empowering young women globally."),
   BookModel(
       title: "American Gods",
-      category: "Fiction",
+      category: "Novel",
       author: "Neil Gaiman",
       overview:
           "Shadow, just out of prison, meets the mysterious Mr. Wednesday and embarks on a strange journey across America.",
@@ -68,7 +68,7 @@ List<BookModel> books = [
           "Neil Gaiman is an award-winning author known for his dark fantasy novels. His works span across multiple genres, blending mythology, horror, and magical realism."),
   BookModel(
       title: "A Court of Thorns and Roses",
-      category: "Fantasy",
+      category: "Novel",
       author: "Sarah J. Maas",
       overview:
           "Feyre, a huntress, is dragged into a magical realm after killing a faerie wolf. There, she discovers her captor, Tamlin, is hiding dangerous secrets.",
