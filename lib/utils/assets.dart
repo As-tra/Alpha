@@ -42,6 +42,10 @@ class Assets {
   /// assets/images/micro.png
   static const String imagesMicro = "assets/images/micro.png";
 
+  /// Assets for imagesNotFound
+  /// assets/images/not_found.png
+  static const String imagesNotFound = "assets/images/not_found.png";
+
   /// Assets for imagesNotification
   /// assets/images/notification.png
   static const String imagesNotification = "assets/images/notification.png";
