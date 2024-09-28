@@ -1,5 +1,6 @@
 import 'package:alpha/utils/styles.dart';
 import 'package:alpha/views/empty_view.dart';
+import 'package:alpha/views/profile_view.dart';
 import 'package:alpha/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class _HomeViewState extends State<HomeView> {
     HomeViewBody(),
     EmptyView(),
     EmptyView(),
-    EmptyView(),
+    ProfileView(),
   ];
   int currentIndex = 0;
   @override

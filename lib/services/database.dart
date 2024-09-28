@@ -38,4 +38,15 @@ class DatabaseMethods {
       return null;
     }
   }
+
+  Future<void> confirmUser(String id) async {
+    log(id);
+    try {
+      await FirebaseFirestore.instance.collection('Users').doc(id).update(
+        {"actif": true},
+      );
+    } catch (e) {
+      log("Error when I update the user actif field");
+    }
+  }
 }

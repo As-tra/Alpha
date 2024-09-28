@@ -14,7 +14,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   void onChange(Change<AuthState> change) {
     super.onChange(change);
     log(change.toString());
-    log(userId + " --- " + userStatus.toString());
   }
 
   AuthBloc() : super(AuthInitial()) {
