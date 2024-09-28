@@ -1,6 +1,6 @@
 # alpha
 
-A new Flutter project.
+A new E-Book store with admin dashboard
 
 ## Getting Started
 
