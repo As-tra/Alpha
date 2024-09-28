@@ -30,6 +30,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   Widget build(BuildContext context) {
     return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
+        if (state is AdminLoginSuccess) {
+          GoRouter.of(context).push(AppRouter.kAdminView);
+        }
         if (state is LoginSuccess) {
           GoRouter.of(context).push(AppRouter.kHomeView);
         } else if (state is LoginFailure) {

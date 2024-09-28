@@ -1,4 +1,5 @@
 import 'package:alpha/models/book_model.dart';
+import 'package:alpha/views/admin_view.dart';
 import 'package:alpha/views/book_details_view.dart';
 import 'package:alpha/views/home_view.dart';
 import 'package:alpha/views/login_view.dart';
@@ -13,6 +14,7 @@ abstract class AppRouter {
   static const kRegisterView = '/RegisterView';
   static const kHomeView = '/HomeView';
   static const kBookDetails = '/BookDetails';
+  static const kAdminView = '/AdminView';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -22,6 +24,10 @@ abstract class AppRouter {
       GoRoute(
         path: kHomeView,
         builder: (context, state) => const HomeView(),
+      ),
+      GoRoute(
+        path: kAdminView,
+        builder: (context, state) => const AdminView(),
       ),
       GoRoute(
         path: kOnboarding,

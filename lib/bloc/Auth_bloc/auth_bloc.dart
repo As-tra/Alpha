@@ -1,5 +1,4 @@
-
-
+import 'package:alpha/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,18 +16,32 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               email: event.email,
               password: event.password,
             );
+            String id = "${event.email}-astra";
+            Map<String, dynamic> userInfo = {
+              "name": event.name,
+              "email": event.email,
+              "image": "",
+              "actif": false,
+              "id": id,
+            };
+
+            await DatabaseMethods().addUserDetails(userInfo, id);
             emit(RegisterSuccess());
           } on FirebaseAuthException catch (e) {
             emit(RegisterFailure(error: e));
           }
         } else if (event is LoginEvent) {
           try {
-            emit(AuthLoading());
-            await FirebaseAuth.instance.signInWithEmailAndPassword(
-              email: event.email,
-              password: event.password,
-            );
-            emit(LoginSuccess());
+            if (event.email == "admin" && event.password == "admin") {
+              emit(AdminLoginSuccess());
+            } else {
+              emit(AuthLoading());
+              await FirebaseAuth.instance.signInWithEmailAndPassword(
+                email: event.email,
+                password: event.password,
+              );
+              emit(LoginSuccess());
+            }
           } on FirebaseAuthException catch (e) {
             emit(LoginFailure(error: e));
           }
