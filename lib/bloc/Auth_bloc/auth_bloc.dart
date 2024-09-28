@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:alpha/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,6 +8,15 @@ part 'auth_event.dart';
 part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
+  bool userStatus = false;
+  String userId = "";
+  @override
+  void onChange(Change<AuthState> change) {
+    super.onChange(change);
+    log(change.toString());
+    log(userId + " --- " + userStatus.toString());
+  }
+
   AuthBloc() : super(AuthInitial()) {
     on<AuthEvent>(
       (event, emit) async {
@@ -17,6 +28,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               password: event.password,
             );
             String id = "${event.email}-astra";
+            userId = id;
             Map<String, dynamic> userInfo = {
               "name": event.name,
               "email": event.email,
@@ -36,6 +48,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               emit(AdminLoginSuccess());
             } else {
               emit(AuthLoading());
+              userId = "${event.email}-astra";
+              userStatus = await DatabaseMethods().getStatus(userId) ?? false;
+              log("user status:$userStatus");
               await FirebaseAuth.instance.signInWithEmailAndPassword(
                 email: event.email,
                 password: event.password,

@@ -29,6 +29,7 @@ class CustomBookDetailsCover extends StatelessWidget {
         ]),
         height: 300,
         child: CustomBookCover(
+          isLocked: false,
           image: bookModel.image,
         ),
       ),

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DatabaseMethods {
@@ -16,6 +18,23 @@ class DatabaseMethods {
         return null;
       }
     } catch (e) {
+      return null;
+    }
+  }
+
+  Future<bool?> getStatus(String id) async {
+    log(id);
+    try {
+      DocumentSnapshot userDoc =
+          await FirebaseFirestore.instance.collection('Users').doc(id).get();
+
+      if (userDoc.exists && userDoc.data() != null) {
+        return userDoc.get('actif');
+      } else {
+        return null;
+      }
+    } catch (e) {
+      log("we have an erro :${e.toString()}");
       return null;
     }
   }
