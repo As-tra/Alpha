@@ -14,7 +14,6 @@ class HomeViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: ListView(
-        physics: const BouncingScrollPhysics(),
         children: const [
           SizedBox(height: 16),
           CustomNavBar(),

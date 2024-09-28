@@ -1,5 +1,4 @@
 import 'package:alpha/utils/assets.dart';
-import 'package:alpha/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomNavBar extends StatelessWidget {
@@ -9,15 +8,18 @@ class CustomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Icon(
+        Icon(
           Icons.menu,
-          color: AppColors.grey3,
+          color: Theme.of(context).colorScheme.onSurfaceVariant,
           size: 26,
         ),
         const Spacer(),
         Row(
           children: [
-            Image.asset(Assets.imagesNotification),
+            Image.asset(
+              Assets.imagesNotification,
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
             const SizedBox(width: 15),
             const CircleAvatar(
               radius: 17,

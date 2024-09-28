@@ -24,6 +24,7 @@ class _HomeViewState extends State<HomeView> {
       canPop: false,
       child: SafeArea(
         child: Scaffold(
+          backgroundColor: Theme.of(context).colorScheme.surface,
           body: views[currentIndex],
           bottomNavigationBar: SizedBox(
             height: 75,

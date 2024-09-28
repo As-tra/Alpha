@@ -12,6 +12,7 @@ class BookDetailsView extends StatelessWidget {
     timeDilation = 4;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.surface,
         body: BookDetailsViewBody(
           bookModel: bookModel,
         ),

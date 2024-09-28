@@ -59,6 +59,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   children: [
                     Image.asset(
                       Assets.imagesLogoDark,
+                      color: Theme.of(context).colorScheme.secondary,
                       height: 140,
                     ),
                     const SizedBox(height: 25),

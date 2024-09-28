@@ -1,5 +1,4 @@
 import 'package:alpha/utils/assets.dart';
-import 'package:alpha/utils/colors.dart';
 import 'package:alpha/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +13,7 @@ class CustomSearchWidget extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(
           width: .5,
-          color: AppColors.grey2,
+          color: Theme.of(context).colorScheme.onSurface,
         ),
         borderRadius: BorderRadius.circular(10),
       ),
@@ -28,11 +27,17 @@ class CustomSearchWidget extends StatelessWidget {
                 border: InputBorder.none,
                 hintText: 'Search here',
                 hintStyle: Styles.styleRegular16(context),
-                prefixIcon: Image.asset(Assets.imagesSearch),
+                prefixIcon: Image.asset(
+                  Assets.imagesSearch,
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
             ),
           ),
-          Image.asset(Assets.imagesMicro),
+          Image.asset(
+            Assets.imagesMicro,
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
           const SizedBox(width: 5),
           const VerticalDivider(color: Color(0xffe0e0e0)),
           const SizedBox(width: 14),

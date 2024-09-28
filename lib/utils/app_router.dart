@@ -17,11 +17,11 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => const HomeView(),
+        builder: (context, state) => const SplashView(),
       ),
       GoRoute(
-        path: '/',
-        builder: (context, state) => const SplashView(),
+        path: kHomeView,
+        builder: (context, state) => const HomeView(),
       ),
       GoRoute(
         path: kOnboarding,

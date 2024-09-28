@@ -62,6 +62,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                   children: [
                     Image.asset(
                       Assets.imagesLogoDark,
+                      color: Theme.of(context).colorScheme.secondary,
                       height: 140,
                     ),
                     const SizedBox(height: 41),

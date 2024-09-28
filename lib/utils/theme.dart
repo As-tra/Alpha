@@ -20,14 +20,14 @@ ThemeData lightTheme = ThemeData(
 ThemeData darkTheme = ThemeData(
   useMaterial3: true,
   brightness: Brightness.dark,
-  scaffoldBackgroundColor: Colors.white,
+  scaffoldBackgroundColor: AppColors.secondaryColor,
   fontFamily: kFontFamily,
   colorScheme: const ColorScheme.dark(
     primary: AppColors.primaryColor,
     secondary: Color(0xffFEFEFE),
     surface: AppColors.secondaryColor,
-    onSurface: Color(0xffE7E7E7),
-    tertiary: Color(0xffE7E7E7),
+    onSurface: Color(0xffacacac),
+    tertiary: Color(0xfff0f0f0),
     onSurfaceVariant: Color(0xffE7E7E7),
   ),
 );

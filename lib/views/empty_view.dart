@@ -11,7 +11,10 @@ class EmptyView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(Assets.imagesNotFound),
+          Image.asset(
+            Assets.imagesNotFound,
+            color: Theme.of(context).colorScheme.secondary,
+          ),
           const SizedBox(height: 32),
           Text("4 0 4", style: Styles.styleBold24(context)),
         ],

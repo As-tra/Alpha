@@ -27,7 +27,7 @@ class Alpha extends StatelessWidget {
       create: (context) => AuthBloc(),
       child: AdaptiveTheme(
         light: lightTheme,
-        // dark: darkTheme,
+        dark: darkTheme,
         initial: savedThemeMode ?? AdaptiveThemeMode.system,
         builder: (theme, darkTheme) => MaterialApp.router(
           theme: theme,
