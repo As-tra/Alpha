@@ -8,10 +8,15 @@ class CustomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(
-          Icons.menu,
-          color: Theme.of(context).colorScheme.onSurfaceVariant,
-          size: 26,
+        IconButton(
+          onPressed: () {
+            Scaffold.of(context).openDrawer();
+          },
+          icon: Icon(
+            Icons.menu,
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
+            size: 26,
+          ),
         ),
         const Spacer(),
         Row(

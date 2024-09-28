@@ -1,4 +1,5 @@
 import 'package:alpha/widgets/admin_view_body.dart';
+import 'package:alpha/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
 class AdminView extends StatelessWidget {
@@ -9,6 +10,7 @@ class AdminView extends StatelessWidget {
     return const PopScope(
       canPop: false,
       child: Scaffold(
+        drawer: CustomDrawer(),
         body: AdminViewBody(),
       ),
     );

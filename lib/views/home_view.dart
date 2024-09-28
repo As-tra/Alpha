@@ -1,6 +1,6 @@
 import 'package:alpha/utils/styles.dart';
 import 'package:alpha/views/empty_view.dart';
-import 'package:alpha/views/profile_view.dart';
+import 'package:alpha/widgets/custom_drawer.dart';
 import 'package:alpha/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,7 @@ class _HomeViewState extends State<HomeView> {
     HomeViewBody(),
     EmptyView(),
     EmptyView(),
-    ProfileView(),
+    EmptyView(),
   ];
   int currentIndex = 0;
   @override
@@ -25,6 +25,7 @@ class _HomeViewState extends State<HomeView> {
       canPop: false,
       child: SafeArea(
         child: Scaffold(
+          drawer: const CustomDrawer(),
           backgroundColor: Theme.of(context).colorScheme.surface,
           body: views[currentIndex],
           bottomNavigationBar: SizedBox(

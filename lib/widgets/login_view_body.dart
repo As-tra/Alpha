@@ -84,8 +84,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                         if (formKey.currentState!.validate()) {
                           BlocProvider.of<AuthBloc>(context).add(
                             LoginEvent(
-                              email: emailController.text,
-                              password: passwordController.text,
+                              email: emailController.text.trim(),
+                              password: passwordController.text.trim(),
                             ),
                           );
                         }

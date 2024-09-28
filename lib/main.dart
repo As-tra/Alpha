@@ -19,7 +19,10 @@ void main() async {
 }
 
 class Alpha extends StatelessWidget {
-  const Alpha({super.key, required this.savedThemeMode});
+  const Alpha({
+    super.key,
+    required this.savedThemeMode,
+  });
   final AdaptiveThemeMode? savedThemeMode;
   @override
   Widget build(BuildContext context) {

@@ -95,9 +95,9 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                         if (formKey.currentState!.validate()) {
                           BlocProvider.of<AuthBloc>(context).add(
                             RegisterEvent(
-                              email: emailController.text,
-                              password: passwordController.text,
-                              name: nameController.text,
+                              email: emailController.text.trim(),
+                              password: passwordController.text.trim(),
+                              name: nameController.text.trim(),
                             ),
                           );
                         }

@@ -12,6 +12,28 @@ List<String> categories = [
 ];
 List<BookModel> books = [
   BookModel(
+      title: "A Court of Thorns",
+      category: "Novel",
+      author: "Sarah J. Maas",
+      overview:
+          "Feyre, a huntress, is dragged into a magical realm after killing a faerie wolf. There, she discovers her captor, Tamlin, is hiding dangerous secrets.",
+      image: Assets.images6, // Replace with the actual image path
+      rating: "4.6",
+      price: "14",
+      aboutAuthor:
+          "Sarah J. Maas is a bestselling author known for her fantasy series, including *Throne of Glass* and *A Court of Thorns and Roses*. Her works are known for their strong characters and immersive worlds."),
+  BookModel(
+      title: "Someone Like You",
+      category: "Novel",
+      author: "Sarah Dessen",
+      overview:
+          "Halley and Scarlett have been best friends forever. When Scarlett's boyfriend dies and she finds out she's pregnant, Halley must support her through the hardest times, while also grappling with her own growing pains.",
+      image: Assets.images7, // Replace with the actual asset image
+      rating: "4.2",
+      price: "12",
+      aboutAuthor:
+          "Sarah Dessen is a bestselling American author of young adult fiction. Her books often focus on the emotional growth of teens as they navigate relationships, identity, and life challenges."),
+  BookModel(
       title: "If Only I Had Told Her",
       category: "Novel",
       author: "Laura Nowlin",
@@ -66,15 +88,4 @@ List<BookModel> books = [
       price: "12",
       aboutAuthor:
           "Neil Gaiman is an award-winning author known for his dark fantasy novels. His works span across multiple genres, blending mythology, horror, and magical realism."),
-  BookModel(
-      title: "A Court of Thorns and Roses",
-      category: "Novel",
-      author: "Sarah J. Maas",
-      overview:
-          "Feyre, a huntress, is dragged into a magical realm after killing a faerie wolf. There, she discovers her captor, Tamlin, is hiding dangerous secrets.",
-      image: Assets.images6, // Replace with the actual image path
-      rating: "4.6",
-      price: "14",
-      aboutAuthor:
-          "Sarah J. Maas is a bestselling author known for her fantasy series, including *Throne of Glass* and *A Court of Thorns and Roses*. Her works are known for their strong characters and immersive worlds.")
 ];
